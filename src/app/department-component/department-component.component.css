@@ -1,0 +1,5 @@
+.active {
+    color: red;
+    text-transform: capitalize;
+    font-style: italic
+}

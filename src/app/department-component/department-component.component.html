@@ -1,0 +1,7 @@
+<p>department-component works!</p>
+    <div>
+        <ul *ngFor="let department of departmentList">
+            <li [class.active] ="iSelected(department)" (click)="onSelect(department)">{{department.name}}</li>
+        </ul>
+    </div>
+
