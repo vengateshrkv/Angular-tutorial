@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import {HttpClient, HttpErrorResponse} from '@angular/common/http'
+import {HttpClient, HttpResponse} from '@angular/common/http'
 import { Employee } from './employee'
 import { Observable } from 'rxjs/internal/Observable';
 import { catchError } from 'rxjs/operators';
@@ -14,11 +14,8 @@ export class EmployeeService {
     private _url: string = "/assets/data/employees1.json"
 
     getEmployeeList(): Observable<Employee[]> {
-        return this.http.get<Employee[]>(this._url)
-                        .pipe(catchError(this.errorHandler))
+        return this.http.get<Employee[]>(this._url);
     }
 
-    errorHandler(error: HttpErrorResponse) {
-        return Observable.throw(error.message)
-    }
+    
 }
